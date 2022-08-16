@@ -1,0 +1,22 @@
+#about {
+    background-color: var(--black);
+}
+.about__image {
+    height: 65vh;
+}
+.about__image > img {
+    max-height: 100%;
+}
+.about__text {
+    display: flex;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+}
+.about__phrase {
+    font-size: 100px;
+    line-height: 0px;
+}
+.phrase-right {
+    text-align: right;
+}
