@@ -1,0 +1,13 @@
+@import url('./styles/menu.css');
+
+:root {
+    --dark-grey: #191919;
+    --light-grey: #828282;
+    --red: #d5311b;
+    --black: #000000;
+    --white: #ffffff;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}

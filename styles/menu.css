@@ -1,0 +1,22 @@
+.menu {
+    background-color: var(--dark-grey);
+    display: flex;
+}
+.menu__logo {
+    height: 100px;
+}
+.links {
+    width: 100%;
+    padding: 0 5%;
+    display: inline-flex;
+    align-items: center;
+    flex-flow: row;
+    justify-content:center
+}
+.links__item {
+    color: var(--white);
+    text-decoration: none;
+    list-style-type: none;
+    text-align: right;
+    margin-right: 80px;
+}
