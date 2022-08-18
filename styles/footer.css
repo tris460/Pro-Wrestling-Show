@@ -1,0 +1,8 @@
+.footer__title {
+    background-color: var(--red);
+    display: flex;
+}
+.title-text {
+    margin: auto 10px auto auto;
+    
+}
