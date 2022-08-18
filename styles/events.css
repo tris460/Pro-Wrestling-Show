@@ -1,0 +1,22 @@
+.events {
+    background-color: var(--black);
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+}
+.events__logo {
+    grid-column: 1/4;
+    margin: auto;
+}
+.events__list {
+    grid-column: 4/-2;
+    display: flex;
+    flex-wrap: wrap;
+}
+.list-item {
+    flex-grow: 1;
+    justify-content: space-around;
+    text-align: center;
+    margin: 10px;
+}
