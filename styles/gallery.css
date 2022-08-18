@@ -1,5 +1,6 @@
 #gallery {
     text-align: center;
+    background-color: var(--beige);
 }
 .gallery {
     max-width: 300px;

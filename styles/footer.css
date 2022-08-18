@@ -4,5 +4,37 @@
 }
 .title-text {
     margin: auto 10px auto auto;
-    
+}
+.social {
+    background-color: var(--beige);
+    padding: 30px;
+    margin: 0px
+}
+.social__title {
+    text-align: center;
+}
+.social__links {
+    text-align: center;
+}
+.social__links > a {
+    text-decoration: none;
+}
+.links-img {
+    height: 70px;
+    margin: 5px;
+    border-radius: 50%;
+}
+hr {
+    margin: 25px auto;
+    width: 30%;
+    background-color: var(--black);
+}
+.credits {
+    background-color: var(--black);
+    padding: 30px 20px;
+}
+.credits__link {
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
 }
