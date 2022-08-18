@@ -1,0 +1,34 @@
+#gallery {
+    text-align: center;
+}
+.gallery {
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 5%;
+}
+.carousel {
+    animation: slide 10s infinite ease-in-out;
+    display: flex;
+    padding: 0;
+    width: 50%;
+}
+.carousel > li {
+    list-style: none;
+}
+.carousel__img {
+    height: 300px;
+    width: 300px;
+}
+
+@keyframes slide {
+    0% { margin-left: 0px; }
+    33% { margin-left: 0px; }
+    
+    33.1% { margin-left: -300px; }
+    66% { margin-left: -300px; }
+    
+    66.1% { margin-left: -600px; }
+    100% { margin-left: -600px; }
+}
