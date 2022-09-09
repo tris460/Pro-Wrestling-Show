@@ -1,6 +1,8 @@
 .menu {
     background-color: var(--dark-grey);
     display: flex;
+    position: fixed;
+    width: 100%;
 }
 .menu__logo {
     height: 100px;

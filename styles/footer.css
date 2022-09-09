@@ -1,3 +1,7 @@
+#footer {
+    position: relative;
+    top: 100px;
+}
 .footer__title {
     background-color: var(--red);
     display: flex;

@@ -1,5 +1,7 @@
 .events {
     background-color: var(--black);
+    position: relative;
+    top: 100px;
 }
 .grid {
     display: grid;

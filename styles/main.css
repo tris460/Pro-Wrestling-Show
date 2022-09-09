@@ -2,6 +2,9 @@
     background-color: var(--black);
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    top: 100px;
+    z-index: -1;
 }
 .main__image {
     height: 65vh;

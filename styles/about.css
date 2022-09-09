@@ -1,6 +1,8 @@
 .about {
     min-height: 70vh;
     background-color: var(--beige);
+    position: relative;
+    top: 100px;
 }
 .about__background {
     position: absolute;
