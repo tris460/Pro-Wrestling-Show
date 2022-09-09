@@ -16,10 +16,14 @@
 body {
     margin: 0px;
     padding: 0px;
+    font-family: 'Oswald', sans-serif;
 }
 .text_white {
     color: var(--white);
 }
 .text_red {
     color: var(--red);
+}
+.text_raleway {
+    font-family: 'Raleway', sans-serif;
 }
