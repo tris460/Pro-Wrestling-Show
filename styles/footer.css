@@ -1,6 +1,7 @@
 #footer {
     position: relative;
     top: 100px;
+    z-index: -1;
 }
 .footer__title {
     background-color: var(--red);
@@ -8,6 +9,7 @@
 }
 .title-text {
     margin: auto 10px auto auto;
+    font-size: 20px;
 }
 .social {
     background-color: var(--beige);
@@ -16,6 +18,7 @@
 }
 .social__title {
     text-align: center;
+    font-size: 20px;
 }
 .social__links {
     text-align: center;

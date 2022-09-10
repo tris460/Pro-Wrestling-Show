@@ -2,6 +2,7 @@
     background-color: var(--black);
     position: relative;
     top: 100px;
+    z-index: -1;
 }
 .grid {
     display: grid;
@@ -21,4 +22,6 @@
     justify-content: space-around;
     text-align: center;
     margin: 10px;
+    min-width: 200px;
+    font-size: 18px;
 }

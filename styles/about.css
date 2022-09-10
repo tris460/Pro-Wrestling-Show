@@ -1,14 +1,14 @@
 .about {
     min-height: 70vh;
     background-color: var(--beige);
-    position: relative;
-    top: 100px;
+    margin-top: 100px;
 }
 .about__background {
     position: absolute;
     display: flex;
     align-items: center;
     width: 100%;
+    /* z-index: -1; */
 }
 .background__text {
     color: var(--light-grey);
@@ -21,7 +21,6 @@
 .about__description {
     padding: 40px;
     position: absolute;
-    z-index: 1;
 }
 .description__text {
     color: var(--black);
