@@ -26,8 +26,15 @@
 @media screen and (max-width: 2100px) {
     .main__image, .main__text {
         margin: 0 auto;
+        height: auto;
     }
     .main__image > img {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    #main {
+        top: 0px;
     }
 }

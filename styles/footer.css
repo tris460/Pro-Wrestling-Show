@@ -47,3 +47,9 @@ hr {
     display: block;
     line-height: 40px;
 }
+
+@media screen and (max-width: 830px) {
+    #footer {
+        top: 0px;
+    }
+}
