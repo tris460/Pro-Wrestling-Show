@@ -23,7 +23,7 @@
     text-align: right;
 }
 
-@media screen and (max-width: 2100px) {
+@media screen and (max-width: 1250px) {
     .main__image, .main__text {
         margin: 0 auto;
         height: auto;
