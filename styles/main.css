@@ -23,3 +23,12 @@
 .phrase-right {
     text-align: right;
 }
+
+@media screen and (max-width: 2100px) {
+    .main__image, .main__text {
+        margin: 0 auto;
+    }
+    .main__image > img {
+        width: 100%;
+    }
+}
