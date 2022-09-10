@@ -3,6 +3,7 @@
     display: flex;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 .menu__logo {
     height: 100px;

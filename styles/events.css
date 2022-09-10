@@ -2,7 +2,6 @@
     background-color: var(--black);
     position: relative;
     top: 100px;
-    z-index: -1;
 }
 .grid {
     display: grid;

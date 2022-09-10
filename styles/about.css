@@ -7,7 +7,6 @@
     top: 100px;
     padding: 30px;
     overflow-y: scroll;
-    z-index: -1;
 }
 .about__description {
     padding: 40px;

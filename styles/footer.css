@@ -1,7 +1,6 @@
 #footer {
     position: relative;
     top: 100px;
-    z-index: -1;
 }
 .footer__title {
     background-color: var(--red);
@@ -25,6 +24,9 @@
 }
 .social__links > a {
     text-decoration: none;
+}
+.social__links > a:hover {
+    cursor: pointer;
 }
 .links-img {
     height: 70px;
