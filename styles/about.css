@@ -1,21 +1,13 @@
 .about {
     min-height: 70vh;
-    background-color: var(--beige);
-    margin-top: 100px;
-}
-.about__background {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-.background__text {
-    color: var(--light-grey);
-    font-size: 480px;
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-    text-align: center;
+    background-image: url('../assets/work-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 100px;
+    padding: 30px;
+    overflow-y: scroll;
+    z-index: -1;
 }
 .about__description {
     padding: 40px;
