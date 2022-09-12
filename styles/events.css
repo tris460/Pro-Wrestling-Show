@@ -25,7 +25,7 @@
     font-size: 18px;
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 850px) {
     .events {
         top: 0px;
     }
