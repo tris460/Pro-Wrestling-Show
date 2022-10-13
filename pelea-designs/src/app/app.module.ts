@@ -12,7 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MenuHomeComponent } from './components/menu-home/menu-home.component';
 import { MenuGeneralComponent } from './components/menu-general/menu-general.component';
-import { RecomendedComponent } from './components/recomended/recomended.component';
+import { RecommendedComponent } from './components/recommended/recommended.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { RecomendedComponent } from './components/recomended/recomended.componen
     SignUpComponent,
     MenuHomeComponent,
     MenuGeneralComponent,
-    RecomendedComponent
+    RecommendedComponent
   ],
   imports: [
     BrowserModule,
