@@ -11,6 +11,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

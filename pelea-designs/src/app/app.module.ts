@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MenuHomeComponent } from './components/menu-home/menu-home.component';
 import { MenuGeneralComponent } from './components/menu-general/menu-general.component';
+import { RecomendedComponent } from './components/recomended/recomended.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MenuGeneralComponent } from './components/menu-general/menu-general.com
     LoginComponent,
     SignUpComponent,
     MenuHomeComponent,
-    MenuGeneralComponent
+    MenuGeneralComponent,
+    RecomendedComponent
   ],
   imports: [
     BrowserModule,
