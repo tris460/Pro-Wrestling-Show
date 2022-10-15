@@ -15,3 +15,15 @@ header {
   text-align: right;
   width: 70vw;
 }
+.logo {
+  background-image: url('../../../assets/banner-logo-white.jpeg');
+  height: 40vh;
+  background-size: cover;
+}
+.logo-social {
+  padding: 10px;
+}
+.social__links {
+  width: 8vw;
+  margin: 10px;
+}
