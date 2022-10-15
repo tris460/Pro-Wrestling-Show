@@ -14,10 +14,10 @@
     <div class="d-flex justify-content-between product-extra">
       <!-- Product actions -->
       <div class="product-actions">
-        <button type="button">
+        <button type="button" class="button-pencil">
           <img src="../../../assets/pencil.png" class="actions__icon">
         </button>
-        <button type="button">
+        <button type="button" class="button-bin">
           <img src="../../../assets/bin.png" class="actions__icon">
         </button>
       </div>
@@ -28,16 +28,19 @@
   </div>
 </div>
 <!-- Buttons -->
-<div>
-  <div>
-      <button type="button">Pay now</button>
-  </div>
-  <div>
+<div class="button-pay">
+  <div class="pay-price">
       <p>Total $price</p>
   </div>
+  <div class="pay-now">
+      <button type="button">Pay now</button>
+  </div>
 </div>
-<div>
-  <button type="button" class="btn-block">Continue buying</button>
+<div class="continue-buying">
+  <button type="button">Continue buying</button>
 </div>
 <!-- Recommended -->
-<app-recommended></app-recommended>
+<div class="recommended">
+  <h1>You may also like</h1>
+  <app-recommended></app-recommended>
+</div>

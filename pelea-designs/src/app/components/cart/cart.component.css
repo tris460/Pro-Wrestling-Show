@@ -25,16 +25,61 @@
   align-items: flex-end;
 }
 .product-actions > button {
-  border: 1px solid var(--light-grey);
-  border-radius: 3px;
+  border: none;
+  border-radius: 8px;
   padding: 5px;
   margin: 0px 3px;
 }
 .actions__icon {
   width: 30px;
+  filter: invert(1);
+}
+.button-pencil {
+  background-color: var(--blue);
+}
+.button-bin {
+  background-color: var(--red);
 }
 .product-price > p {
   text-align: right;
   font-size: 1.3em;
   margin-bottom: 10px;
+}
+.button-pay {
+  margin: 5%;
+}
+.pay-price {
+  width: 95%;
+  text-align: right;
+}
+.pay-price > p {
+  font-size: 1.3em;
+  color: var(--black);
+}
+.continue-buying {
+  width: 100%;
+  margin: 5%;
+}
+.pay-now > button {
+  background-color: var(--green);
+  font-size: 1.3em;
+  width: 100%;
+}
+.continue-buying > button {
+  background-color: var(--light-green);
+  font-size: 1em;
+  width: 90%;
+}
+.pay-now > button, .continue-buying > button {
+  color: var(--white);
+  padding: 5px 0px;
+  border: none;
+  border-radius: 5px;
+}
+.recommended {
+  margin: 15% 0%;
+}
+.recommended > h1 {
+  margin-left: 5%;
+  font-size: 1.5em;
 }
