@@ -1,34 +1,43 @@
+<app-menu-general></app-menu-general>
 <!-- Product List -->
 <!-- Product item -->
-<div>
-<!-- Product image -->
-<div>
-    <img src="#">
-</div>
-<!-- Product information -->
-<div>
-    <p>Product name</p>
-</div>
-<!-- Product actions -->
-<div>
-    <button type="button">Edit</button>
-    <button type="button">Delete</button>
-</div>
-<div>
-    <p>$price</p>
-</div>
+<div class="product-item">
+  <!-- Product image -->
+  <div class="product-image">
+    <img src="../../../assets/products/product1.jpeg">
+  </div>
+  <!-- Product information -->
+  <div class="product-info">
+    <div class="product-name">
+      <p>Product name</p>
+    </div>
+    <div class="d-flex justify-content-between product-extra">
+      <!-- Product actions -->
+      <div class="product-actions">
+        <button type="button">
+          <img src="../../../assets/pencil.png" class="actions__icon">
+        </button>
+        <button type="button">
+          <img src="../../../assets/bin.png" class="actions__icon">
+        </button>
+      </div>
+      <div class="product-price">
+        <p>$price</p>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Buttons -->
 <div>
-<div>
-    <button type="button">Pay now</button>
+  <div>
+      <button type="button">Pay now</button>
+  </div>
+  <div>
+      <p>Total $price</p>
+  </div>
 </div>
 <div>
-    <p>Total $price</p>
-</div>
-</div>
-<div>
-<button type="button" class="btn-block">Continue buying</button>
+  <button type="button" class="btn-block">Continue buying</button>
 </div>
 <!-- Recommended -->
 <app-recommended></app-recommended>
