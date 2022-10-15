@@ -33,3 +33,24 @@
   width: 100%;
   margin: 3% 0%;
 }
+.share {
+  margin: 5%;
+  margin-top: 10%;
+}
+.share > h1 {
+  font-size: 1.5em;
+}
+.share-links {
+  display: flex;
+}
+.links__social {
+  margin: 10px;
+  width: 30px;
+}
+.recommended {
+  margin: 12% 0%;
+}
+.recommended > h1 {
+  margin: 0% 5%;
+  font-size: 1.5em;
+}
