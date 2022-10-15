@@ -1,0 +1,16 @@
+header {
+  height: 10vh;
+  background-color: #000;
+  display: flex;
+}
+.icon-menu {
+  padding: 3%;
+  height: 90%;
+  filter: invert(0.8);
+}
+.icon-menu:hover {
+  cursor: pointer;
+}
+.menu-profile {
+  text-align: right;
+}
