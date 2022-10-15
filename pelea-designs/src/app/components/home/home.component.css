@@ -1,4 +1,8 @@
-.logo {}
+.logo {
+  background-image: url('../../../assets/banner-logo-white.jpeg');
+  height: 40vh;
+  background-size: cover;
+}
 .logo-social {
   padding: 10px;
 }
@@ -22,4 +26,11 @@
   background-color: var(--green);
   width: 100%;
   color: var(--white);
+}
+.recommended {
+  margin: 10% 0%;
+}
+.recommended > h1 {
+  font-size: 2em;
+  margin-left: 5%;
 }
