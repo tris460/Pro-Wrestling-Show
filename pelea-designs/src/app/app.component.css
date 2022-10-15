@@ -1,0 +1,28 @@
+footer {
+  background-color: var(--black);
+  padding: 3%;
+}
+h1 {
+  color: var(--light-grey);
+  font-size: 35px;
+  margin: 5% 0% 3% 3%;
+}
+hr {
+  background-color: var(--light-grey);
+  width: 80%;
+  height: 2px;
+}
+.footer-link {
+  display: block;
+  color: var(--light-grey);
+  font-size: 18px;
+}
+.footer-social {
+  filter: invert(0.8);
+  display: flex;
+  margin-bottom: 5%;
+}
+.footer-social__link {
+  width: 30px;
+  margin: 10px;
+}
