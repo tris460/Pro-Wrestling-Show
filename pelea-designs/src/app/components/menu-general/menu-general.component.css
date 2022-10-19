@@ -13,9 +13,22 @@ header {
 }
 .menu-profile {
   text-align: right;
-  width: 40vw;
+  width: 15vw;
   padding-right: 3%;
 }
 .menu-profile > a > img {
-  padding: 10% 5%;
+  padding: 15% 5%;
+}
+.logo-menu {
+  filter: invert(0);
+  width: 7vh;
+  padding: 0%;
+  margin-left: -50%;
+}
+.burger-menu {
+  padding: 0%;
+  margin: 0%;
+}
+.navbar {
+  padding: 0%;
 }

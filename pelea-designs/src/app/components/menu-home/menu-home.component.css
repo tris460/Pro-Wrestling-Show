@@ -13,11 +13,11 @@ header {
 }
 .menu-profile {
   text-align: right;
-  width: 30vw;
+  width: 15vw;
   padding-right: 3%;
 }
 .menu-profile > a > img {
-  padding: 10% 5%;
+  padding: 15% 5%;
 }
 .logo {
   background-image: url('../../../assets/banner-logo-white.jpeg');
@@ -37,3 +37,8 @@ header {
 .dropdown-item {
   color: var(--white);
 }
+.burger-menu {
+  padding: 0%;
+  margin: 0%;
+}
+
