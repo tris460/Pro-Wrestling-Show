@@ -27,3 +27,9 @@ header {
   width: 8vw;
   margin: 10px;
 }
+.dropdown-menu {
+  background-color: var(--black);
+}
+.dropdown-item {
+  color: var(--white);
+}

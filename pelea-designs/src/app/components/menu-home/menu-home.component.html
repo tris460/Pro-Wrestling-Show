@@ -1,9 +1,20 @@
 <!-- Main menu - Header -->
 <header>
   <!-- Menu mobile -->
-  <img src="./assets/menu.png" class="icon-menu">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="./assets/menu.png" class="icon-menu">
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="">Home</a></li>
+    <li><a class="dropdown-item" routerLink="cart">Cart</a></li>
+    <li><a class="dropdown-item" routerLink="notifications">Notifications</a></li>
+    <!-- <li><a class="dropdown-item" routerLink="chat">Chat</a></li> -->
+    <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
   <!-- Search bar -->
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar">
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
