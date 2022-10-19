@@ -21,7 +21,7 @@
   height: 40%;
 }
 .product-extra {
-  height: 60%;
+  height: 50%;
   align-items: flex-end;
 }
 .product-actions > button {
@@ -65,12 +65,12 @@
   font-size: 1.3em;
   width: 100%;
 }
-.continue-buying > button {
+.continue-buying > a > button {
   background-color: var(--light-green);
   font-size: 1em;
   width: 90%;
 }
-.pay-now > button, .continue-buying > button {
+.pay-now > button, .continue-buying > a > button {
   color: var(--white);
   padding: 5px 0px;
   border: none;
