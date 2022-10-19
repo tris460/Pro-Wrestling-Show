@@ -13,7 +13,11 @@ header {
 }
 .menu-profile {
   text-align: right;
-  width: 70vw;
+  width: 30vw;
+  padding-right: 3%;
+}
+.menu-profile > a > img {
+  padding: 10% 5%;
 }
 .logo {
   background-image: url('../../../assets/banner-logo-white.jpeg');

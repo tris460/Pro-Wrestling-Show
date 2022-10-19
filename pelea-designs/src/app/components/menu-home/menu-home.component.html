@@ -6,10 +6,10 @@
   </a>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" routerLink="">Home</a></li>
-    <li><a class="dropdown-item" routerLink="cart">Cart</a></li>
-    <li><a class="dropdown-item" routerLink="notifications">Notifications</a></li>
-    <!-- <li><a class="dropdown-item" routerLink="chat">Chat</a></li> -->
-    <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+    <li><a class="dropdown-item" routerLink="/cart">Cart</a></li>
+    <li><a class="dropdown-item" routerLink="/notifications">Notifications</a></li>
+    <!-- <li><a class="dropdown-item" routerLink="/chat">Chat</a></li> -->
+    <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="#">Logout</a></li>
   </ul>
@@ -21,9 +21,13 @@
   </nav>
   <div class="menu-profile">
       <!-- Profile -->
-      <img src="./assets/user.png" class="icon-menu">
+      <a routerLink="/profile">
+        <img src="./assets/user.png" class="icon-menu">
+      </a>
       <!-- Cart -->
-      <img src="./assets/cart.png" class="icon-menu">
+      <a routerLink="/cart">
+        <img src="./assets/cart.png" class="icon-menu">
+      </a>
   </div>
 </header>
 <!-- Logo -->

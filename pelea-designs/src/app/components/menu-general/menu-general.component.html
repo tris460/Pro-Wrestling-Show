@@ -1,24 +1,34 @@
 <!-- Main menu - Header -->
 <header>
   <!-- Menu mobile -->
-  <img src="./assets/menu.png" class="icon-menu">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="./assets/menu.png" class="icon-menu">
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="">Home</a></li>
+    <li><a class="dropdown-item" routerLink="/cart">Cart</a></li>
+    <li><a class="dropdown-item" routerLink="/notifications">Notifications</a></li>
+    <!-- <li><a class="dropdown-item" routerLink="/chat">Chat</a></li> -->
+    <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
   <!-- Logo -->
   <img src="..." class="logo-meu icon-menu">
   <!-- Search bar -->
-  <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
+  <nav class="navbar">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
   </nav>
   <div class="menu-profile">
       <!-- Profile -->
-      <img src="./assets/user.png" class="icon-menu">
+      <a routerLink="/profile">
+        <img src="./assets/user.png" class="icon-menu">
+      </a>
       <!-- Cart -->
-      <img src="./assets/cart.png" class="icon-menu">
+      <a routerLink="/cart">
+        <img src="./assets/cart.png" class="icon-menu">
+      </a>
   </div>
 </header>

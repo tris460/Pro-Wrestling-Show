@@ -1,5 +1,5 @@
 header {
-  height: 10vh;
+  height: 7vh;
   background-color: var(--black);
   display: flex;
 }
@@ -13,5 +13,9 @@ header {
 }
 .menu-profile {
   text-align: right;
-  width: 55vw;
+  width: 40vw;
+  padding-right: 3%;
+}
+.menu-profile > a > img {
+  padding: 10% 5%;
 }
