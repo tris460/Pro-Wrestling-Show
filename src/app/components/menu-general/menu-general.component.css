@@ -16,6 +16,9 @@ header {
   width: 15vw;
   padding-right: 3%;
 }
+.dropdown-toggle {
+  width: 22vw;
+}
 .menu-profile > a > img {
   padding: 15% 5%;
 }

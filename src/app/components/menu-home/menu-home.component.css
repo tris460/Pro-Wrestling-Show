@@ -34,6 +34,9 @@ header {
 .dropdown-menu {
   background-color: var(--black);
 }
+.nav-link {
+  width: 15vw;
+}
 .dropdown-item {
   color: var(--white);
 }

@@ -57,7 +57,7 @@
   color: var(--black);
 }
 .continue-buying {
-  width: 100%;
+  width: 90%;
   margin: 5%;
 }
 .pay-now > button {
@@ -68,7 +68,7 @@
 .continue-buying > a > button {
   background-color: var(--light-green);
   font-size: 1em;
-  width: 90%;
+  width: 100%;
 }
 .pay-now > button, .continue-buying > a > button {
   color: var(--white);
