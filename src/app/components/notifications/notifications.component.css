@@ -1,0 +1,21 @@
+.title {
+  padding: 5px 10px;
+}
+.title > h1 {
+  font-size: 28px;
+}
+.notification {
+  display: flex;
+  height: 12vh;
+  padding: 10px;
+  background-color: var(--light-blue);
+}
+.notification > img {
+  padding-right: 20px;
+}
+.notification-description > h3 {
+  font-size: 22px;
+}
+.notification-description > p {
+  font-size: 16px;
+}
