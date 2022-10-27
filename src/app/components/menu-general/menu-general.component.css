@@ -35,3 +35,12 @@ header {
 .navbar {
   padding: 0%;
 }
+.dropdown-menu {
+  background-color: var(--black);
+}
+.dropdown-item {
+  color: var(--white);
+}
+.dropdown-item:hover {
+  background-color: var(--grey);
+}

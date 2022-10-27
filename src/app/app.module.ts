@@ -13,6 +13,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MenuHomeComponent } from './components/menu-home/menu-home.component';
 import { MenuGeneralComponent } from './components/menu-general/menu-general.component';
 import { RecommendedComponent } from './components/recommended/recommended.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RecommendedComponent } from './components/recommended/recommended.compo
     SignUpComponent,
     MenuHomeComponent,
     MenuGeneralComponent,
-    RecommendedComponent
+    RecommendedComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
