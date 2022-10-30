@@ -3,20 +3,24 @@
   text-align: center;
 }
 .login > h1 {
-  font-size: 1.3em;
+  font-size: 22px;
 }
 .form {
   text-align: left;
-  margin-top: 8%;
+  margin-top: 30px;
 }
 .form-label {
-  font-size: 1em;
+  font-size: 20px;
 }
 .form-input {
   width: 100%;
   border: none;
   border-bottom: 2px solid var(--light-grey);
   margin-bottom: 5%;
+  outline: none;
+}
+.form-input:focus {
+  border-bottom: 2px solid var(--green);
 }
 .forgot {
     text-align: right;
@@ -29,7 +33,7 @@
   background-color: var(--green);
   color: var(--white);
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   margin: 10% 0% 2%;
@@ -40,4 +44,16 @@
 .new-customer > p > a {
   text-decoration: underline;
   font-style: italic;
+  color: var(--black);
+}
+
+@media screen and (min-width: 768px) {
+  .login {
+    margin: 0% 20%;
+    margin-bottom: 100px;
+  }
+  .form > button {
+    margin: 5% 10%;
+    width: 80%;
+  }
 }
