@@ -1,6 +1,13 @@
+.products-general {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
 .card {
-  width: 90%;
-  margin: 5%;
+  min-width: 240px;
+  max-width: 280px;
+  margin: 10px 5px;
 }
 .card-img-top {
   height: 200px;
@@ -10,15 +17,23 @@
 .card-title, .card-text {
   text-align: center;
 }
+.card-title {
+  color: var(--black);
+  font-size: 22px;
+}
+.card-text {
+  font-size: 16px;
+}
 .card-btn {
   background-color: var(--green);
   width: 100%;
   color: var(--white);
+  font-size: 16px;
 }
 .recommended {
   margin: 10% 0%;
 }
 .recommended > h1 {
-  font-size: 2em;
+  font-size: 28px;
   margin-left: 5%;
 }
