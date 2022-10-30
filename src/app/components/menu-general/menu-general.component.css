@@ -1,10 +1,9 @@
 header {
-  height: 7vh;
+  height: 8vh;
   background-color: var(--black);
   display: flex;
 }
 .icon-menu {
-  padding: 3%;
   height: 90%;
   filter: invert(0.8);
 }
@@ -16,24 +15,26 @@ header {
   width: 15vw;
   padding-right: 3%;
 }
-.dropdown-toggle {
-  width: 22vw;
-}
 .menu-profile > a > img {
-  padding: 15% 5%;
+  padding: 8px;
 }
 .logo-menu {
   filter: invert(0);
   width: 7vh;
   padding: 0%;
-  margin-left: -50%;
 }
 .burger-menu {
   padding: 0%;
   margin: 0%;
 }
 .navbar {
-  padding: 0%;
+  width:100%;
+}
+.nav-link {
+  height: 100%;
+}
+.form-inline, .form-control {
+  width: 100%;
 }
 .dropdown-menu {
   background-color: var(--black);
@@ -43,4 +44,9 @@ header {
 }
 .dropdown-item:hover {
   background-color: var(--grey);
+}
+@media screen and (min-width: 768px) {
+  .menu-profile {
+    width: 10vw;
+  }
 }
