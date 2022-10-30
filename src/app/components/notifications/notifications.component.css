@@ -1,3 +1,6 @@
+a:hover {
+    text-decoration: none;
+}
 .title {
   padding: 5px 10px;
 }
@@ -8,9 +11,12 @@
   display: flex;
   height: 12vh;
   padding: 10px;
+  margin: 0px 5px;
   background-color: var(--light-blue);
+  border: 1px solid var(--white);
+  color: var(--black);
 }
-.notification > img {
+.notification-img {
   padding-right: 20px;
 }
 .notification-description > h3 {
@@ -18,4 +24,10 @@
 }
 .notification-description > p {
   font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .notification {
+    height: 90px;
+    padding-left: 20px;
+  }
 }
