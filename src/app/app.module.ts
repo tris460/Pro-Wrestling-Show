@@ -14,6 +14,9 @@ import { MenuHomeComponent } from './components/menu-home/menu-home.component';
 import { MenuGeneralComponent } from './components/menu-general/menu-general.component';
 import { RecommendedComponent } from './components/recommended/recommended.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { ChatComponent } from './components/chat/chat.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
