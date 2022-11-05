@@ -1,4 +1,3 @@
-<app-menu-home></app-menu-home>
 <!-- Form -->
 <div class="sign-up">
   <!-- Title -->
@@ -7,15 +6,36 @@
   </div>
   <!-- Fields -->
   <form class="form">
-    <label for="email" class="form-label">Email</label><br>
-    <input type="email" id="email" class="form-input" required><br>
-    <label for="c-email" class="form-label">Confirm Email</label><br>
-    <input type="email" id="c-email" class="form-input" required><br>
-    <label for="password" class="form-label">Password</label><br>
-    <input type="password" id="password" class="form-input" required><br>
-    <label for="c-password" class="form-label">Confirm Password</label><br>
-    <input type="password" id="c-password" class="form-input" required><br>
-    <button type="button">Login</button>
+    <label for="name" class="form-label">Name<span class="required" title="This field is required">*</span></label><br>
+    <input type="text" id="name" class="form-input" required [(ngModel)]="userFields.name" [ngModelOptions]="{standalone: true}"><br>
+    <p class="required-text" id="name_req" *ngIf="name_req">This field is required</p>
+
+    <label for="last_name" class="form-label">Last name<span class="required" title="This field is required">*</span></label><br>
+    <input type="text" id="last_name" class="form-input" required  [(ngModel)]="userFields.last_name" [ngModelOptions]="{standalone: true}"><br>
+    <p class="required-text" id="last_n_req" *ngIf="last_n_req">This field is required</p>
+
+    <label for="email" class="form-label">Email<span class="required" title="This field is required">*</span></label><br>
+    <input type="email" id="email" class="form-input" required  [(ngModel)]="userFields.email" [ngModelOptions]="{standalone: true}"><br>
+    <p class="required-text" id="email_req" *ngIf="email_req">This field is required</p>
+    <p class="required-text" id="email_verify" *ngIf="email_verify">Please, verify this field</p>
+    <p class="required-text" id="email_registered" *ngIf="email_registered">This email is already registered</p>
+
+    <label for="c-email" class="form-label">Confirm Email<span class="required" title="This field is required">*</span></label><br>
+    <input type="email" id="c-email" class="form-input" required [(ngModel)]="userFields.c_email" [ngModelOptions]="{standalone: true}"><br>
+    <p class="required-text" id="c_email_req" *ngIf="c_email_req">This field is required</p>
+    <p class="required-text" id="c_email_not_match" *ngIf="c_email_not_match">The email did not match</p>
+
+    <label for="password" class="form-label">Password<span class="required" title="This field is required">*</span></label><br>
+    <input type="password" id="password" class="form-input" required [(ngModel)]="userFields.password" [ngModelOptions]="{standalone: true}"><br>
+    <p class="required-text" id="pass_req" *ngIf="pass_req">This field is required</p>
+    <p class="required-text" id="pass_char" *ngIf="pass_char">Please, use numbers, uppercase, lowercase, special characters and from 8 to 16 characters</p>
+
+    <label for="c-password" class="form-label">Confirm Password<span class="required" title="This field is required">*</span></label><br>
+    <input type="password" id="c-password" class="form-input" required [(ngModel)]="userFields.c_password" [ngModelOptions]="{standalone: true}"><br>
+    <p class="required-text" id="c_pass_req" *ngIf="c_pass_req">This field is required</p>
+    <p class="required-text" id="c_pass_not_match" *ngIf="c_pass_not_match">The password did not match</p>
+
+    <button type="button" (click)="verifyFields()">Login</button>
     <div class="old-customer">
       <p>Already have an account? <a routerLink="/login">Login</a></p>
     </div>

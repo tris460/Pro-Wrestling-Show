@@ -17,6 +17,9 @@ import { ChatComponent } from './components/chat/chat.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SignUpService } from './services/sign-up.service';
 
 @NgModule({
   declarations: [
@@ -36,10 +39,14 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
-  providers: [],
+  providers: [
+    SignUpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

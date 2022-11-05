@@ -8,4 +8,13 @@
   --light-green: #7fc899;
   --blue: #17a2b8;
   --light-blue: #e4f3fc;
+  --red: #ff0000;
+}
+.required {
+  color: var(--red);
+}
+.required-text {
+  color: var(--red);
+  font-size: 14px;
+  margin: 0px;
 }
