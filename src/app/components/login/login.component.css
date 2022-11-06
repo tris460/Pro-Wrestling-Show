@@ -46,6 +46,19 @@
   font-style: italic;
   color: var(--black);
 }
+.divider {
+  background-color: var(--grey);
+  height: 2px;
+  margin: 30px 0px;
+}
+.login-with-btn {
+  background-color: transparent;
+  border: none;
+}
+.login-with-btn > img {
+  width: 50px;
+  height: auto;
+}
 
 @media screen and (min-width: 768px) {
   .login {

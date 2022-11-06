@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { LoginData } from 'src/app/interfaces/login-data';
 import { User } from 'src/app/interfaces/user';
@@ -96,4 +96,14 @@ export class SignUpComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  /**
+   * This function is for the login with Google, it shows a popup
+   * where you choose your email, and then redirects you to home
+   * in case they are correct.
+   */
+  signUpWithGoogle() {
+    signInWithPopup(this.auth, new GoogleAuthProvider())
+    .then(() => this.router.navigate(['/']))
+    .catch((e: any) => console.error(e.message));
+  }
 }
