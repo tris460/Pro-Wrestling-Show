@@ -8,15 +8,15 @@
   <!-- Fields -->
   <form class="form">
     <label for="email" class="form-label">Email</label><br>
-    <input type="email" id="email" class="form-input" required><br>
+    <input type="email" id="email" class="form-input" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"><br>
     <label for="password" class="form-label">Password</label><br>
-    <input type="password" id="password" class="form-input" required>
+    <input type="password" id="password" class="form-input" required [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
     <div class="forgot">
       <p>Forgot your password?</p>
     </div>
-    <button type="button">Login</button>
+    <button type="button" (click)="login()">Login</button>
     <div class="new-customer">
-      <p>New customer? <a routerLink="/sign-up">Sign in</a></p>
+      <p>New customer? <a routerLink="/sign-up">Sign up</a></p>
     </div>
   </form>
 </div>
