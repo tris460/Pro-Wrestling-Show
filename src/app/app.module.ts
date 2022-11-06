@@ -19,7 +19,6 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SignUpService } from './services/sign-up.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +43,7 @@ import { SignUpService } from './services/sign-up.service';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
-  providers: [
-    SignUpService
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

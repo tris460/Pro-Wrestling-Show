@@ -18,3 +18,7 @@
   font-size: 14px;
   margin: 0px;
 }
+.required-fields {
+  text-align: center;
+  margin-top: -20px;
+}
