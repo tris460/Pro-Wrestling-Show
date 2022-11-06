@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "pelea-designs"
+  },
+  "targets": {
+    "pelea-designs": {
+      "hosting": {
+        "pelea-designs": [
+          "pelea-designs"
+        ]
+      }
+    }
   }
 }

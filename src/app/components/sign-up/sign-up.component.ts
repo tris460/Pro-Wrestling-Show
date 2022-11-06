@@ -1,8 +1,7 @@
-import { identifierName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { copyFileSync } from 'fs';
-import { delay } from 'rxjs';
+import { LoginData } from 'src/app/interfaces/login-data';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -19,14 +18,6 @@ export class SignUpComponent implements OnInit {
     c_email: '',
     password: '',
     c_password: ''
-  };
-  newUser: User = {
-    name: this.userFields.name,
-    last_name: this.userFields.last_name,
-    email: this.userFields.email,
-    password: this.userFields.password,
-    favorites: [],
-    products: []
   };
   name_req: boolean = false;
   last_n_req: boolean = false;
@@ -45,12 +36,12 @@ export class SignUpComponent implements OnInit {
 
   fieldsVerified: boolean = false;
 
-  constructor(private usersService: UsersService, private router: Router) { }
+  constructor(private usersService: UsersService, private router: Router, private auth: Auth) { }
 
   ngOnInit(): void {
   }
 
-  verifyFields() {
+  async verifyFields() {
     // Verify the fields are not empty
     this.userFields.name === '' ? this.name_req = true : this.name_req = false;
     this.userFields.last_name === '' ? this.last_n_req = true : this.last_n_req = false;
@@ -80,16 +71,28 @@ export class SignUpComponent implements OnInit {
       this.email_verify === true) {
         this.fieldsVerified = true;
       } else {
-        this.signUp(this.newUser);
+        const newUserCredentials: LoginData = {
+          email: this.userFields.email,
+          password: this.userFields.password
+        };
+        const newUserData: User = {
+          name: this.userFields.name,
+          last_name: this.userFields.last_name,
+          email: this.userFields.email,
+          favorites: [],
+          products: []
+        };
+        await this.usersService.createUser(newUserData);
+        await this.signUp(newUserCredentials);
       }
   }
 
   /**
    * This function registers a new user in the DB after verify the fields
-   * @param user user data to store in the DB for login
+   * @param user object with the user credentials
    */
-  async signUp(user: User) {
-    await this.usersService.createUser(user);
+  signUp(user: LoginData) {
+    createUserWithEmailAndPassword(this.auth, user.email, user.password);
     this.router.navigate(['/']);
   }
 
