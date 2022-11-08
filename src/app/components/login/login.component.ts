@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { Router } from '@angular/router';
 import { LoginData } from 'src/app/interfaces/login-data';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
   };
   correctCredentials: boolean = false;
 
-  constructor(private auth: Auth, private router: Router) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -28,9 +27,7 @@ export class LoginComponent implements OnInit {
    * @returns Execute 'signInWithEmailAndPassword' function from Angular
    */
   login({ email, password}: LoginData) {
-    signInWithEmailAndPassword(this.auth, email, password)
-    .then(() => this.router.navigate(['/']))
-    .catch((e: any) => console.error(e.message));
+    this.loginService.login({ email, password});
   }
 
   /**
@@ -39,8 +36,6 @@ export class LoginComponent implements OnInit {
    * in case they are correct.
    */
   loginGoogle() {
-    signInWithPopup(this.auth, new GoogleAuthProvider())
-    .then(() => this.router.navigate(['/']))
-    .catch((e: any) => console.error(e.message));
+    this.loginService.signUpWithGoogle();
   }
 }
