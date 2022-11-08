@@ -20,6 +20,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     MenuHomeComponent,
     MenuGeneralComponent,
     RecommendedComponent,
-    ChatComponent
+    ChatComponent,
+    UserDataComponent
   ],
   imports: [
     BrowserModule,

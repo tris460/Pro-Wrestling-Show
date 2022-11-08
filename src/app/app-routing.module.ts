@@ -10,6 +10,7 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { ProductComponent } from './components/product/product.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'chat', component: ChatComponent }
+  { path: 'chat', component: ChatComponent },
+  { path: 'user-data', component: UserDataComponent }
 ];
 
 @NgModule({

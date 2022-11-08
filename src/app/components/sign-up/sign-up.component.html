@@ -6,14 +6,6 @@
   </div>
   <!-- Fields -->
   <form class="form">
-    <label for="name" class="form-label">Name<span class="required" title="This field is required">*</span></label><br>
-    <input type="text" class="form-input" required [(ngModel)]="userFields.name" [ngModelOptions]="{standalone: true}"><br>
-    <p class="required-text" *ngIf="name_req">This field is required</p>
-
-    <label for="last_name" class="form-label">Last name<span class="required" title="This field is required">*</span></label><br>
-    <input type="text" class="form-input" required  [(ngModel)]="userFields.last_name" [ngModelOptions]="{standalone: true}"><br>
-    <p class="required-text" *ngIf="last_n_req">This field is required</p>
-
     <label for="email" class="form-label">Email<span class="required" title="This field is required">*</span></label><br>
     <input type="email" id="email" class="form-input" required  [(ngModel)]="userFields.email" [ngModelOptions]="{standalone: true}"><br>
     <p class="required-text" *ngIf="email_req">This field is required</p>

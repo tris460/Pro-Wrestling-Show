@@ -1,13 +1,57 @@
 import { Injectable } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
+import { Auth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { LoginData } from '../interfaces/login-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  constructor(private router: Router, private auth: Auth) { }
 
-  constructor(private firestore: Firestore) { }
+  /**
+   * This function registers a new user in the DB after verify the fields
+   * @param user object with the user credentials
+   */
+   signUp(user: LoginData) {
+    createUserWithEmailAndPassword(this.auth, user.email, user.password)
+    .then((res) => {
+      localStorage.setItem('idUserLogged', res.user.uid);
+    })
+    .catch((e) => console.error(e));
+    this.router.navigate(['/user-data']);
+  }
 
-  login(credentials: object) {}
+  /**
+   * This function verifies if the credentials the user is using
+   * are registered in the DB. If they are correct, the user
+   * is redirected to Home, if not, you got an error message.
+   * @param param0 It receives a object with the email and password, both strings
+   * @returns Execute 'signInWithEmailAndPassword' function from Angular
+   */
+   login({ email, password}: LoginData) {
+    signInWithEmailAndPassword(this.auth, email, password)
+    .then((res) => {
+    this.router.navigate(['/']);
+    })
+    .catch((e: any) => console.error(e.message));
+  }
 
+  /**
+   * This function is for the login with Google, it shows a popup
+   * where you choose your email, and then redirects you to home
+   * in case they are correct.
+   */
+  signUpWithGoogle() {
+    signInWithPopup(this.auth, new GoogleAuthProvider())
+    .then(() => this.router.navigate(['/']))
+    .catch((e: any) => console.error(e.message));
+  }
+
+  /**
+   * This function closes the active session
+   */
+  logout() {
+    signOut(this.auth);
+  }
 }

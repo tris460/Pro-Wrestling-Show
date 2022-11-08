@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
-import { Router } from '@angular/router';
 import { LoginData } from 'src/app/interfaces/login-data';
 import { User } from 'src/app/interfaces/user';
-import { UsersService } from 'src/app/services/users.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,15 +10,12 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class SignUpComponent implements OnInit {
   userFields = {
-    name: '',
-    last_name: '',
     email: '',
     c_email: '',
     password: '',
     c_password: ''
   };
-  name_req: boolean = false;
-  last_n_req: boolean = false;
+
   email_req: boolean = false;
   email_verify: boolean = false;
   email_registered: boolean = false;
@@ -36,15 +31,13 @@ export class SignUpComponent implements OnInit {
 
   fieldsVerified: boolean = false;
 
-  constructor(private usersService: UsersService, private router: Router, private auth: Auth) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
   async verifyFields() {
     // Verify the fields are not empty
-    this.userFields.name === '' ? this.name_req = true : this.name_req = false;
-    this.userFields.last_name === '' ? this.last_n_req = true : this.last_n_req = false;
     this.userFields.email === '' ? this.email_req = true : this.email_req = false;
     this.userFields.c_email === '' ? this.c_email_req = true : this.c_email_req = false;
     this.userFields.password === '' ? this.pass_req = true : this.pass_req = false;
@@ -59,9 +52,7 @@ export class SignUpComponent implements OnInit {
     // Verify it is an email
     this.validateEmail.test(this.userFields.email) && this.userFields.email !== '' ? this.email_verify = false : this.email_verify = true;
 
-    if(this.name_req === true ||
-      this.last_n_req === true ||
-      this.email_req === true ||
+    if(this.email_req === true ||
       this.c_email_req === true ||
       this.pass_req === true ||
       this.c_pass_req === true ||
@@ -75,14 +66,6 @@ export class SignUpComponent implements OnInit {
           email: this.userFields.email,
           password: this.userFields.password
         };
-        const newUserData: User = {
-          name: this.userFields.name,
-          last_name: this.userFields.last_name,
-          email: this.userFields.email,
-          favorites: [],
-          products: []
-        };
-        await this.usersService.createUser(newUserData);
         await this.signUp(newUserCredentials);
       }
   }
@@ -92,8 +75,7 @@ export class SignUpComponent implements OnInit {
    * @param user object with the user credentials
    */
   signUp(user: LoginData) {
-    createUserWithEmailAndPassword(this.auth, user.email, user.password);
-    this.router.navigate(['/']);
+    this.loginService.signUp(user);
   }
 
   /**
@@ -102,8 +84,6 @@ export class SignUpComponent implements OnInit {
    * in case they are correct.
    */
   signUpWithGoogle() {
-    signInWithPopup(this.auth, new GoogleAuthProvider())
-    .then(() => this.router.navigate(['/']))
-    .catch((e: any) => console.error(e.message));
+    this.loginService.signUpWithGoogle();
   }
 }

@@ -1,0 +1,44 @@
+.sign-up {
+  margin: 0% 5% 10%;
+  text-align: center;
+}
+.sign-up > h1 {
+  font-size: 22px;
+}
+.form {
+  text-align: left;
+  margin-top: 30px;
+}
+.form-label {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--light-grey);
+  margin-bottom: 5px;
+  outline: none;
+}
+.form-input:focus {
+  border-bottom: 2px solid var(--green);
+}
+.form > button {
+  background-color: var(--green);
+  color: var(--white);
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 10% 0% 2%;
+}
+@media screen and (min-width: 768px) {
+  .sign-up {
+    margin: 0% 20%;
+    margin-bottom: 100px;
+  }
+  .form > button {
+    margin: 5% 10%;
+    width: 80%;
+  }
+}
