@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { UserDataComponent } from './components/user-data/user-data.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UserDataComponent } from './components/user-data/user-data.component';
     MenuGeneralComponent,
     RecommendedComponent,
     ChatComponent,
-    UserDataComponent
+    UserDataComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
