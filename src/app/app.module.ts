@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BannerComponent } from './components/banner/banner.component';
     RecommendedComponent,
     ChatComponent,
     UserDataComponent,
-    BannerComponent
+    BannerComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
