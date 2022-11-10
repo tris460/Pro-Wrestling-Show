@@ -23,6 +23,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AdminComponent } from './components/admin/admin.component';
     ChatComponent,
     UserDataComponent,
     BannerComponent,
-    AdminComponent
+    AdminComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

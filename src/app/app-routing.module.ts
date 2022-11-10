@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MenuGeneralComponent } from './components/menu-general/menu-general.component';
 import { MenuHomeComponent } from './components/menu-home/menu-home.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'user-data', component: UserDataComponent },
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent }
 ];
 
 @NgModule({
