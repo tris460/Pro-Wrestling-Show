@@ -5,8 +5,8 @@
  display: flex;
  border-bottom: 2px solid var(--light-grey);
 }
-.product-check-img {
-  width: 25%;
+.product-img {
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -40,4 +40,18 @@
 .actions-visible > img {
   height: 25px;
   margin: 0px 3px;
+}
+.add-product {
+  margin: 10px 20px;
+  position: sticky;
+  bottom: 0px;
+}
+.add-product > button {
+    background-color: var(--green);
+    color: var(--white);
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10% 0% 2%;
 }
