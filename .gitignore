@@ -48,3 +48,6 @@ Thumbs.db
 
 # Deploy
 /docs
+
+# Env variables
+src/environments
