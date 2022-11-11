@@ -24,6 +24,7 @@ import { UserDataComponent } from './components/user-data/user-data.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
     UserDataComponent,
     BannerComponent,
     AdminComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

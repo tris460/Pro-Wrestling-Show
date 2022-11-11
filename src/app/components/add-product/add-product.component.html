@@ -1,0 +1,29 @@
+<app-menu-general></app-menu-general>
+<div class="add-product">
+  <div class="title">
+    <h1>Add Product</h1>
+  </div>
+  <!-- Form to save a product -->
+  <form class="form">
+    <!-- Product image -->
+    <div class="form-img">
+      <img src="../../../assets/unavailable.png" alt="Image no available" class="img__image">
+      <input type="file" accept="image/png, image/jpeg, image/jpg, image/svg" class="img__input">
+    </div>
+    <!-- Product fields -->
+    <div class="form-fields">
+      <input type="text" placeholder="Product name" maxlength="50">
+      <input type="number" placeholder="Price" max="1000" min="10">
+      <input type="text" placeholder="Description" maxlength="300">
+      <label for="category">Category</label>
+      <div class="category" id="category">
+        <input type="checkbox">
+        <p>Category</p>
+      </div>
+      <div class="variants">
+        <label for="variants">Variants</label>
+        <input id="variants" type="file" alt="Upload image" accept="image/png, image/jpeg, image/jpg, image/svg">
+      </div>
+    </div>
+  </form>
+</div>
