@@ -9,4 +9,5 @@ export interface Product {
   category: Array<string>;
   subcategory: string;
   format: Array<string>;
+  visible: Boolean;
 }
