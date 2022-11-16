@@ -22,3 +22,22 @@
   text-align: center;
   margin-top: -20px;
 }
+.title {
+  padding: 5px 10px;
+}
+.title > h1 {
+  font-size: 28px;
+}
+.subtitle {
+  font-size: 25px;
+}
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--light-grey);
+  margin-bottom: 5px;
+  outline: none;
+}
+.form-input:focus {
+  border-bottom: 2px solid var(--green);
+}

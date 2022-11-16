@@ -1,0 +1,24 @@
+.form {
+  margin: 10px;
+}
+.form-img {
+  width: 100vw;
+}
+.img__image {
+  width: 50%;
+  padding: 20px;
+  max-width: 300px;
+}
+.form-input {
+  margin: 10px 0px;
+}
+.category {
+  display: flex;
+  align-content: center;
+}
+.category > p {
+  margin: 0px 5px;
+}
+#category, .variants {
+  padding: 20px 0px 10px;
+}

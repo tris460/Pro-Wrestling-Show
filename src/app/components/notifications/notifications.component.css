@@ -1,12 +1,6 @@
 a:hover {
     text-decoration: none;
 }
-.title {
-  padding: 5px 10px;
-}
-.title > h1 {
-  font-size: 28px;
-}
 .notification {
   display: flex;
   height: 12vh;
