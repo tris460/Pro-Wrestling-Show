@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuGeneralComponent } from './components/menu-general/menu-general.component';
 import { MenuHomeComponent } from './components/menu-home/menu-home.component';
+import { ModifyProductComponent } from './components/modify-product/modify-product.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ProductComponent } from './components/product/product.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'user-data', component: UserDataComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'add-product', component: AddProductComponent }
+  { path: 'add-product', component: AddProductComponent },
+  { path: 'modify-product', component: ModifyProductComponent }
 ];
 
 @NgModule({
