@@ -12,23 +12,38 @@
     </div>
     <!-- Product fields -->
     <div class="form-fields">
-      <input type="text" placeholder="Product name" maxlength="50" class="form-input">
-      <input type="number" placeholder="Price" max="1000" min="10" class="form-input">
-      <input type="text" placeholder="Description" maxlength="300" class="form-input">
+      <input type="text" placeholder="Product name" maxlength="50" class="form-input" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">
+      <input type="number" placeholder="Price" max="1000" min="10" class="form-input" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}">
+      <input type="number" placeholder="Discount" max="100" min="0" class="form-input" [(ngModel)]="product.discount" [ngModelOptions]="{standalone: true}">
+      <input type="text" placeholder="Description" maxlength="300" class="form-input" [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}">
       <div id="category">
         <label for="category" class="subtitle">Category</label>
         <div class="category" id="category">
-          <input type="checkbox">
+          <input name="category" type="checkbox" value=false [(ngModel)]="isChecked" >
           <p>Category</p>
+        </div>
+      </div>
+      <div id="subcategory">
+        <label for="subcategory" class="subtitle">Subcategory</label>
+        <div class="category" id="subcategory">
+          <input type="checkbox">
+          <p>Subcategory</p>
+        </div>
+      </div>
+      <div id="formats">
+        <label for="format" class="subtitle">Format</label>
+        <div class="category" id="format">
+          <input type="checkbox">
+          <p>Format</p>
         </div>
       </div>
       <div class="variants">
         <label for="variants" class="subtitle">Variants</label>
-        <input id="variants" type="file" class="form-input" alt="Upload image" accept="image/png, image/jpeg, image/jpg, image/svg">
+        <input id="variants" type="file" class="form-input" alt="Upload image" accept="image/png, image/jpeg, image/jpg, image/svg" multiple="true">
       </div>
     </div>
   </form>
 </div>
 <div class="add-product-btn">
-  <button type="button">Save</button>
+  <button type="button" (click)="verifyData()">Save</button>
 </div>

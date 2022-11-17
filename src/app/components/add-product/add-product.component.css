@@ -6,9 +6,9 @@
   align-content: center;
 }
 .category > p {
-  margin: 0px 5px;
+  margin: 0px 5px 3px;
 }
-#category, .variants {
+#category, #subcategory, #formats, .variants {
   padding: 20px 0px 10px;
 }
 .add-product-btn {
