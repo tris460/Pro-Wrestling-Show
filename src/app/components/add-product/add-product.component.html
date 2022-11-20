@@ -45,7 +45,7 @@
   </form>
 </div>
 
-<p class="required-text text-center">You must fill al fields</p>
+<p class="required-text text-center" *ngIf="!dataVerified">You must fill al fields</p>
 <div class="add-product-btn">
   <button type="button" (click)="verifyData()">Save</button>
 </div>

@@ -22,18 +22,25 @@ export class ProductsService {
 
   /**
    * This function uploads an image in the folder assigned,
-   * if it is incorrect it will show a message in the console.
+   * if it is incorrect it will show a message in the console,
+   * it returns the response of the promise when it uploads
+   * the image.
    * @param $event The event when someone chooses an image
    * @param folder The folder where the image will be saved
+   * @param fileName The name the file will have
    */
-  uploadImage($event: any, folder: string) {
+  uploadImage($event: any, folder: string, fileName: string) {
     const file = $event.target.files[0]; // Single image to upload
-    const imgReference = ref(this.storage, `${folder}/${file.name}`); // Image reference to upload it
-    uploadBytes(imgReference, file)
-    .then(response => {})
+    const imgReference = ref(this.storage, `${folder}/${fileName}`); // Image reference to upload it
+    let response = uploadBytes(imgReference, file)
+    .then(response => {
+      return response;
+    })
     .catch(error => {
       console.error(error);
+      return error;
     });
+    return response;
   }
 
  /**
