@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-add-product',
@@ -23,10 +24,14 @@ export class AddProductComponent implements OnInit {
     visible: true
   };
 
-  constructor() { }
+  constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
   }
 
   verifyData() {  }
+
+  async uploadImage($event: any) {
+    await this.productService.uploadImage($event, 'products');
+  }
 }

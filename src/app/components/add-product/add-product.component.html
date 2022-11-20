@@ -8,7 +8,7 @@
     <!-- Product image -->
     <div class="form-img">
       <img src="../../../assets/unavailable.png" alt="Image no available" class="img__image mx-auto d-block">
-      <input type="file" accept="image/png, image/jpeg, image/jpg, image/svg" class="img__input">
+      <input type="file" accept="image/png, image/jpeg, image/jpg, image/svg" class="img__input" (change)="uploadImage($event)">
     </div>
     <!-- Product fields -->
     <div class="form-fields">
