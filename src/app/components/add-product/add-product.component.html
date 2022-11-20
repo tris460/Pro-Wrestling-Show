@@ -7,8 +7,8 @@
   <form class="form">
     <!-- Product image -->
     <div class="form-img">
-      <img src="../../../assets/unavailable.png" alt="Image no available" class="img__image mx-auto d-block">
-      <input type="file" accept="image/png, image/jpeg, image/jpg, image/svg" class="img__input" (change)="uploadImage($event)">
+      <img id="previewImage" [src]="currentImage" alt="Image no available" class="img__image mx-auto d-block">
+      <input type="file" accept="image/*" class="img__input" (change)="selectedImage($event)">
     </div>
     <!-- Product fields -->
     <div class="form-fields">
@@ -44,6 +44,8 @@
     </div>
   </form>
 </div>
+
+<p class="required-text text-center">You must fill al fields</p>
 <div class="add-product-btn">
   <button type="button" (click)="verifyData()">Save</button>
 </div>

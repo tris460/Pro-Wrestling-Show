@@ -10,6 +10,8 @@ export class AddProductComponent implements OnInit {
   date = new Date().toDateString();
   isChecked: boolean = false;
   dataVerified: boolean = false;
+  previewImage = document.getElementById('previewImage');
+  currentImage: any = 'assets/unavailable.png';
   product = {
     image: '',
     name: '',
@@ -31,6 +33,24 @@ export class AddProductComponent implements OnInit {
 
   verifyData() {  }
 
+  /**
+   * This function allows you to preview the image you chose.
+   * @param $event Selected image in the input
+   */
+  selectedImage($event: any) {
+    let file = $event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (event => {
+      this.currentImage = reader.result;
+    });
+  }
+
+  /**
+   * This function will call the function to upload the image to
+   * firebase storage, that function is located in the product service.
+   * @param $event Image to be uploaded
+   */
   async uploadImage($event: any) {
     await this.productService.uploadImage($event, 'products');
   }
