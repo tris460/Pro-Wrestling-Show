@@ -21,7 +21,6 @@ export class AddProductComponent implements OnInit {
     discount: 0,
     published_date: this.date,
     category: [],
-    subcategory: [],
     format: [],
     variants: [],
     visible: true
@@ -43,7 +42,6 @@ export class AddProductComponent implements OnInit {
     p.price <= 0 ||
     p.description === '' ||
     p.category.length === 0 ||
-    p.subcategory.length === 0 ||
     p.format.length === 0 ) {
       this.dataVerified = false;
       p.image = p.name.replace(/ /g, '');
@@ -103,7 +101,6 @@ export class AddProductComponent implements OnInit {
       discount: 0,
       published_date: this.date,
       category: [],
-      subcategory: [],
       format: [],
       variants: [],
       visible: true

@@ -7,7 +7,6 @@ export interface Product {
   discount: number;
   published_date: string;
   category: Array<string>;
-  subcategory: Array<string>;
   format: Array<string>;
   variants: Array<string>;
   visible: Boolean;
