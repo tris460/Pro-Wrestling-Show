@@ -18,9 +18,9 @@
       <input type="text" placeholder="Description" maxlength="300" class="form-input" [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}">
       <div id="category">
         <label for="category" class="subtitle">Category</label>
-        <div class="category" id="category">
-          <input name="category" type="checkbox" value=false [(ngModel)]="isChecked" >
-          <p>Category</p>
+        <div class="category" id="category" *ngFor="let category of categoryList; let i=index">
+          <input name="category" type="checkbox" (click)="addCategory(i)">
+          <p>{{category.name}}</p>
         </div>
       </div>
       <div id="formats">

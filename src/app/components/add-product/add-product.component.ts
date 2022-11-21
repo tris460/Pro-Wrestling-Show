@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -13,6 +14,8 @@ export class AddProductComponent implements OnInit {
   currentImage: any = 'assets/unavailable.png';
   file: any = '';
   fileUploadedURL: string = '';
+  categoryList: any = [];
+  categorySelected: Array<string> = [];
   product = {
     image: '',
     name: '',
@@ -20,15 +23,19 @@ export class AddProductComponent implements OnInit {
     price: 0,
     discount: 0,
     published_date: this.date,
-    category: [],
+    category: this.categorySelected,
     format: [],
     variants: [],
     visible: true
   };
 
-  constructor(private productService: ProductsService) { }
+  constructor(private productService: ProductsService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    // Get the categories in the DB
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categoryList = categories;
+    });
   }
 
   /**
@@ -106,5 +113,27 @@ export class AddProductComponent implements OnInit {
       visible: true
     };
     this.currentImage = 'assets/unavailable.png';
+  }
+
+  addCategory(index: number) {
+    let element = this.categoryList[index].name;
+    let exist = false;
+    // Check if the element selected exists in the array
+    this.categorySelected.filter(e => {
+      e == element ? exist = true : false;
+    })
+    if(exist) {
+      // If the element is already in the array, delete it, if not,
+      // add it to the array.
+      this.categorySelected = this.categorySelected.filter(e => {
+        if(e !== element) {
+          return e;
+        } else {
+          return;
+        }
+      })
+    } else {
+      this.categorySelected.push(element);
+    }
   }
 }
