@@ -17,7 +17,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

@@ -26,12 +26,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ModifyProductComponent } from './components/modify-product/modify-product.component';
-import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
-import { providePerformance,getPerformance } from '@angular/fire/performance';
-import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
+import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
@@ -63,12 +58,6 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    provideAnalytics(() => getAnalytics()),
-    provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    providePerformance(() => getPerformance()),
-    provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage())
   ],
   providers: [
