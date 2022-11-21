@@ -3,7 +3,7 @@
   <div class="product-ind">
     <!-- Product image -->
     <section class="product-img">
-      <img src="../../../assets/products/product1.jpeg" class="product-image">
+      <img [src]=productToShow.image class="product-image">
     </section>
     <!-- Product variants -->
     <!-- <div>
@@ -13,8 +13,8 @@
   <div class="information">
     <!-- Product information -->
     <div class="product-information">
-      <h1 class="info-name">Product Name</h1>
-      <h2 class="info-price">Price</h2>
+      <h1 class="info-name">{{productToShow.name}}</h1>
+      <h2 class="info-price">${{productToShow.price}}</h2>
       <p class="info-description">Taxes included</p>
     </div>
     <!-- Buttons -->
@@ -26,7 +26,7 @@
             Details
           </button>
           <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
-            <p>Product description</p>
+            <p>{{productToShow.description}}</p>
           </div>
         </div>
     </div>

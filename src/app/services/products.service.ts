@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
 import { Product } from '../interfaces/product';
-import { Storage, ref, uploadBytes, listAll, getDownloadURL, UploadResult } from '@angular/fire/storage';
+import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
+import { doc, getDoc } from "firebase/firestore";
+
 
 @Injectable({
   providedIn: 'root'
@@ -84,5 +86,17 @@ export class ProductsService {
    getProducts(): Observable<Product[]> {
     const productsReference = collection(this.firestore, 'product');
     return collectionData(productsReference, { idField: 'id' }) as Observable<Product[]>;
+  }
+
+  /**
+   * This function search in the DB for a document whose ID is equals
+   * to the param 'id', if it exists, it returns it.
+   * @param id Product's ID you want to get
+   * @returns The document stored in the DB according to the ID
+   */
+  async getOneProduct(id: any) {
+    const docReference = doc(this.firestore, 'product', id);
+    const document = await getDoc(docReference);
+    return document;
   }
 }

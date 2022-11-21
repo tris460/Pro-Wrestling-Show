@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'menu-general', component: MenuGeneralComponent },
   { path: 'menu-home', component: MenuHomeComponent },
   { path: 'notifications', component: NotificationsComponent },
-  { path: 'product', component: ProductComponent },
+  { path: 'product/:id', component: ProductComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'chat', component: ChatComponent },

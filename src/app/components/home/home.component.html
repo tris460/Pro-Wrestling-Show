@@ -2,8 +2,8 @@
 <!-- Filters -->
 <!-- Products -->
 <div class="products-general">
-  <div class="card" *ngFor="let product of productList">
-    <a routerLink="/product">
+  <div class="card" *ngFor="let product of productList" id={{product.id}}>
+    <a routerLink="/product/{{product.id}}">
       <img src={{product.image}} class="card-img-top mx-auto d-block">
     </a>
       <div class="card-body">
