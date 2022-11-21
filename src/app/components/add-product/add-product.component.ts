@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
+import { FormatService } from 'src/app/services/format.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -15,7 +16,9 @@ export class AddProductComponent implements OnInit {
   file: any = '';
   fileUploadedURL: string = '';
   categoryList: any = [];
+  formatList: any = [];
   categorySelected: Array<string> = [];
+  formatSelected: Array<string> = [];
   product = {
     image: '',
     name: '',
@@ -24,18 +27,22 @@ export class AddProductComponent implements OnInit {
     discount: 0,
     published_date: this.date,
     category: this.categorySelected,
-    format: [],
+    format: this.formatSelected,
     variants: [],
     visible: true
   };
 
-  constructor(private productService: ProductsService, private categoryService: CategoryService) { }
+  constructor(private productService: ProductsService, private categoryService: CategoryService, private formatService: FormatService) { }
 
   ngOnInit(): void {
     // Get the categories in the DB
     this.categoryService.getCategories().subscribe(categories => {
       this.categoryList = categories;
     });
+    // Get the formats in the DB
+    this.formatService.getFormat().subscribe(format => {
+      this.formatList = format;
+    })
   }
 
   /**
@@ -115,17 +122,24 @@ export class AddProductComponent implements OnInit {
     this.currentImage = 'assets/unavailable.png';
   }
 
-  addCategory(index: number) {
-    let element = this.categoryList[index].name;
+  /**
+   * This function help us to know which options the user selected, those options will
+   * be stored in an array.
+   * @param index Index of the element selected by the user, is the index of the arrayList
+   * @param arrayList Array whit all the options the user can select
+   * @param arraySelected Array with the items the user selected
+   */
+  addToArray(index: number, arrayList: Array<any>, arraySelected: Array<any>) {
+    let element = arrayList[index].name;
     let exist = false;
     // Check if the element selected exists in the array
-    this.categorySelected.filter(e => {
+    arraySelected.filter(e => {
       e == element ? exist = true : false;
     })
     if(exist) {
       // If the element is already in the array, delete it, if not,
       // add it to the array.
-      this.categorySelected = this.categorySelected.filter(e => {
+      arraySelected = arraySelected.filter(e => {
         if(e !== element) {
           return e;
         } else {
@@ -133,7 +147,8 @@ export class AddProductComponent implements OnInit {
         }
       })
     } else {
-      this.categorySelected.push(element);
+      arraySelected.push(element);
     }
+    console.log(arraySelected)
   }
 }

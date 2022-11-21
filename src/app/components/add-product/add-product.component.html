@@ -19,15 +19,15 @@
       <div id="category">
         <label for="category" class="subtitle">Category</label>
         <div class="category" id="category" *ngFor="let category of categoryList; let i=index">
-          <input name="category" type="checkbox" (click)="addCategory(i)">
+          <input name="category" type="checkbox" (click)="addToArray(i, categoryList, categorySelected)">
           <p>{{category.name}}</p>
         </div>
       </div>
       <div id="formats">
         <label for="format" class="subtitle">Format</label>
-        <div class="category" id="format">
-          <input type="checkbox">
-          <p>Format</p>
+        <div class="category" id="format" *ngFor="let format of formatList; let i=index">
+          <input type="checkbox" (click)="addToArray(i, formatList, formatSelected)">
+          <p>{{format.name}}</p>
         </div>
       </div>
       <div class="variants">
