@@ -6,7 +6,7 @@
   align-content: center;
 }
 .category > p {
-  margin: 0px 5px 3px;
+  margin: 0px 5px 0px;
 }
 #category, #subcategory, #formats, .variants {
   padding: 20px 0px 10px;
