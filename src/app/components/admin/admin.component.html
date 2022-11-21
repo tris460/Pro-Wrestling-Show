@@ -1,20 +1,20 @@
 <app-menu-general></app-menu-general>
 <div class="product-list">
-  <div class="product-ind">
+  <div class="product-ind" *ngFor="let product of productList; let i=index">
     <div class="product-img">
       <!-- Product image -->
       <div class="product-img">
-        <img src="../../../assets/products/product1.jpeg" alt="Product image" title="Product image">
+        <img src={{product.image}} alt="Product image" title={{product.name}}>
       </div>
     </div>
     <!-- Product info -->
     <div class="product-info">
         <div class="product-details">
             <div class="details-name">
-                <p>Product Name</p>
+                <p>{{product.name}}</p>
             </div>
             <div class="details-price">
-                <p>$$$</p>
+                <p>${{product.price}}</p>
             </div>
         </div>
         <!-- Product actions -->
@@ -24,15 +24,15 @@
                 <img src="../../../assets/bin.png" alt="Delete image" title="Delete image">
             </div>
             <div class="actions-visible">
-                <p>Visible</p>
-                <p>Hidden</p>
-                <img src="../../../assets/visible.png" alt="Product visible">
-                <img src="../../../assets/hidden.png" alt="Product hidden">
+                <p *ngIf="product.visible">Visible</p>
+                <p *ngIf="product.visible == false">Hidden</p>
+                <img *ngIf="product.visible" src="../../../assets/visible.png" alt="Product visible">
+                <img *ngIf="product.visible == false" src="../../../assets/hidden.png" alt="Product hidden">
             </div>
         </div>
     </div>
   </div>
 </div>
-<div class="add-product">
+<div class="add-product" routerLink="/add-product">
   <button type="button">ADD</button>
 </div>

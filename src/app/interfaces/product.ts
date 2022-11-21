@@ -8,6 +8,6 @@ export interface Product {
   published_date: string;
   category: Array<string>;
   format: Array<string>;
-  variants: string;
+  variants: Array<any>;
   visible: Boolean;
 }

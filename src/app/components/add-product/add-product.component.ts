@@ -14,7 +14,7 @@ export class AddProductComponent implements OnInit {
   dataVerified: boolean = true;
   currentImage: any = 'assets/unavailable.png';
   file: any = '';
-  variants: any = [];
+  variants: Array<any> = [];
   fileUploadedURL: string = '';
   categoryList: any = [];
   formatList: any = [];
@@ -30,7 +30,7 @@ export class AddProductComponent implements OnInit {
     published_date: this.date,
     category: this.categorySelected,
     format: this.formatSelected,
-    variants: this.folder,
+    variants: this.variants,
     visible: true
   };
 
@@ -97,7 +97,8 @@ export class AddProductComponent implements OnInit {
    * @param fileName File's name to be stored
    */
   async uploadImage($event: any, fileName: string) {
-    await this.productService.uploadImage($event, 'products', fileName);
+    const response = await this.productService.uploadImage($event, 'products', fileName);
+    this.product.image = response;
   }
 
   /**
@@ -105,24 +106,21 @@ export class AddProductComponent implements OnInit {
    * @param $event Image's data to be updated in the database
    */
   async uploadManyImages($event: any) {
-    this.folder = `products_${this.product.image}`;
-    this.product.variants = `products_${this.product.image}`;
-    await this.productService.uploadManyImages($event, this.folder);
+    this.folder = `variants/products_${this.product.image}`;
+    const response = await this.productService.uploadManyImages($event, this.folder);
+    this.product.variants = response;
   }
 
   /**
    * This function uploads the image to the bucket in Firebase and
    * save the product data.
    */
-  saveProduct() {
-    this.uploadManyImages(this.variants);
-    this.uploadImage(this.file, this.product.image);
-    this.productService.saveProduct(this.product)
-    .then(response => {
-      alert("Your product has been stored successfully :)");
-      this.clearFields();
-     })
-    .catch(error => console.error(error))
+  async saveProduct() {
+    await this.uploadManyImages(this.variants);
+    await this.uploadImage(this.file, this.product.image);
+    await this.productService.saveProduct(this.product)
+    await alert("Your product has been stored successfully :)");
+    await this.clearFields();
   }
 
   /**
@@ -138,7 +136,7 @@ export class AddProductComponent implements OnInit {
       published_date: this.date,
       category: [],
       format: [],
-      variants: '',
+      variants: [],
       visible: true
     };
     this.currentImage = 'assets/unavailable.png';
