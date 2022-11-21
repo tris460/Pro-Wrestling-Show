@@ -1,5 +1,8 @@
 <app-menu-general></app-menu-general>
 <div class="product-list">
+  <div *ngIf="productList.length == 0" class="no-docs">
+    <p>You don't have any product registered, click in the button below and add your first product! 👇</p>
+  </div>
   <div class="product-ind" *ngFor="let product of productList; let i=index">
     <div class="product-img">
       <!-- Product image -->

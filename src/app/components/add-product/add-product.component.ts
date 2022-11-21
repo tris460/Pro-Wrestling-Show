@@ -21,6 +21,7 @@ export class AddProductComponent implements OnInit {
   categorySelected: Array<string> = [];
   formatSelected: Array<string> = [];
   folder = '';
+  showSpinner: boolean = false;
   product = {
     image: '',
     name: '',
@@ -116,31 +117,14 @@ export class AddProductComponent implements OnInit {
    * save the product data.
    */
   async saveProduct() {
+    this.showSpinner = true;
     await this.uploadManyImages(this.variants);
     await this.uploadImage(this.file, this.product.image);
-    await this.productService.saveProduct(this.product)
+    await this.productService.saveProduct(this.product);
     await alert("Your product has been stored successfully :)");
-    await this.clearFields();
+    location.reload();
   }
 
-  /**
-   * This function allows you to clear the fields to save a new product
-   */
-  clearFields() {
-    this.product = {
-      image: '',
-      name: '',
-      description: '',
-      price: 0,
-      discount: 0,
-      published_date: this.date,
-      category: [],
-      format: [],
-      variants: [],
-      visible: true
-    };
-    this.currentImage = 'assets/unavailable.png';
-  }
 
   /**
    * This function help us to know which options the user selected, those options will

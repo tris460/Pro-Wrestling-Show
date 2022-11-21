@@ -2,6 +2,9 @@
 <!-- Filters -->
 <!-- Products -->
 <div class="products-general">
+  <div *ngIf="productList.length == 0" class="no-docs">
+    <p>We are working on our new designs, please be patient 😁</p>
+  </div>
   <div class="card" *ngFor="let product of productList" id={{product.id}}>
     <a routerLink="/product/{{product.id}}">
       <img src={{product.image}} class="card-img-top mx-auto d-block">

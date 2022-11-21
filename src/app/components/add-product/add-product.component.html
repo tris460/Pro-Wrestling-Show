@@ -1,4 +1,9 @@
 <app-menu-general></app-menu-general>
+<div class="spinner d-flex align-items-center justify-content-center" *ngIf="showSpinner">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Saving...</span>
+  </div>
+</div>
 <div class="add-product">
   <div class="title">
     <h1>Add Product</h1>
@@ -12,10 +17,14 @@
     </div>
     <!-- Product fields -->
     <div class="form-fields">
-      <input type="text" placeholder="Product name" maxlength="50" class="form-input" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">
-      <input type="number" placeholder="Price" max="1000" min="10" class="form-input" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}">
-      <input type="number" placeholder="Discount" max="100" min="0" class="form-input" [(ngModel)]="product.discount" [ngModelOptions]="{standalone: true}">
-      <input type="text" placeholder="Description" maxlength="300" class="form-input" [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}">
+      <label for="name" class="form-label">Product name</label><br>
+      <input type="text" id="name" maxlength="50" class="form-input" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">
+      <label for="price" class="form-label">Price</label><br>
+      <input type="number" id="price" max="1000" min="10" class="form-input" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}">
+      <label for="discount" class="form-label">Discount</label><br>
+      <input type="number" id="discount" max="100" min="0" class="form-input" [(ngModel)]="product.discount" [ngModelOptions]="{standalone: true}">
+      <label for="description" class="form-label">Description</label><br>
+      <input type="text" id="description" maxlength="300" class="form-input" [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}">
       <div id="category">
         <label for="category" class="subtitle">Category</label>
         <div class="category" *ngFor="let category of categoryList; let i=index">
