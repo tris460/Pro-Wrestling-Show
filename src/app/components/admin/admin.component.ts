@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class AdminComponent implements OnInit {
   productList: any = [];
-  imagesList: any = [];
   constructor(private productService: ProductsService) {
   }
 

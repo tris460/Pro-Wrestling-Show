@@ -2,15 +2,15 @@
 <!-- Filters -->
 <!-- Products -->
 <div class="products-general">
-  <div class="card">
-    <a routerLink="product">
-      <img src="../../../assets/products/product1.jpeg" class="card-img-top mx-auto d-block">
+  <div class="card" *ngFor="let product of productList">
+    <a routerLink="/product">
+      <img src={{product.image}} class="card-img-top mx-auto d-block">
     </a>
       <div class="card-body">
-        <a routerLink="product">
-          <h5 class="card-title">Card title</h5>
+        <a routerLink="/product">
+          <h5 class="card-title">{{product.name}}</h5>
         </a>
-        <p class="card-text">$$$</p>
+        <p class="card-text">${{product.price}}</p>
         <a href="#" class="btn card-btn">Add to cart</a>
       </div>
   </div>
