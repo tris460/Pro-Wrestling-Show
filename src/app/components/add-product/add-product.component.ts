@@ -14,11 +14,13 @@ export class AddProductComponent implements OnInit {
   dataVerified: boolean = true;
   currentImage: any = 'assets/unavailable.png';
   file: any = '';
+  variants: any = [];
   fileUploadedURL: string = '';
   categoryList: any = [];
   formatList: any = [];
   categorySelected: Array<string> = [];
   formatSelected: Array<string> = [];
+  folder = '';
   product = {
     image: '',
     name: '',
@@ -28,7 +30,7 @@ export class AddProductComponent implements OnInit {
     published_date: this.date,
     category: this.categorySelected,
     format: this.formatSelected,
-    variants: [],
+    variants: this.folder,
     visible: true
   };
 
@@ -58,9 +60,9 @@ export class AddProductComponent implements OnInit {
     p.category.length === 0 ||
     p.format.length === 0 ) {
       this.dataVerified = false;
+    } else {
       p.image = p.name.replace(/ /g, '');
       this.saveProduct();
-    } else {
       this.dataVerified = true;
     }
   }
@@ -80,6 +82,15 @@ export class AddProductComponent implements OnInit {
   }
 
   /**
+   * This function saves the images selected in a variable to be used
+   * subsequently.
+   * @param $event Selected image in the input
+   */
+  selectedManyImages($event: any) {
+    this.variants = $event;
+  }
+
+  /**
    * This function will call the function to upload the image to
    * firebase storage, that function is located in the product service.
    * @param $event Image to be uploaded
@@ -90,10 +101,21 @@ export class AddProductComponent implements OnInit {
   }
 
   /**
+   * This function calls other function to upload the images in the database.
+   * @param $event Image's data to be updated in the database
+   */
+  async uploadManyImages($event: any) {
+    this.folder = `products_${this.product.image}`;
+    this.product.variants = `products_${this.product.image}`;
+    await this.productService.uploadManyImages($event, this.folder);
+  }
+
+  /**
    * This function uploads the image to the bucket in Firebase and
    * save the product data.
    */
   saveProduct() {
+    this.uploadManyImages(this.variants);
     this.uploadImage(this.file, this.product.image);
     this.productService.saveProduct(this.product)
     .then(response => {
@@ -116,7 +138,7 @@ export class AddProductComponent implements OnInit {
       published_date: this.date,
       category: [],
       format: [],
-      variants: [],
+      variants: '',
       visible: true
     };
     this.currentImage = 'assets/unavailable.png';
@@ -149,6 +171,5 @@ export class AddProductComponent implements OnInit {
     } else {
       arraySelected.push(element);
     }
-    console.log(arraySelected)
   }
 }

@@ -30,16 +30,35 @@ export class ProductsService {
    * @param fileName The name the file will have
    */
   uploadImage($event: any, folder: string, fileName: string) {
-    const file = $event.target.files[0]; // Single image to upload
+    const file = $event.target.files[0]; // Single image to uploaded
     const imgReference = ref(this.storage, `${folder}/${fileName}`); // Image reference to upload it
     let response = uploadBytes(imgReference, file)
-    .then(response => {
-      return response;
-    })
+    .then(response => { return response })
     .catch(error => {
       console.error(error);
       return error;
     });
+    return response;
+  }
+
+  /**
+   * This function uploads many images without changing the image's name.
+   * @param $event Images chosen by the user
+   * @param folder Where the images will be saved
+   * @returns The response of the promise, it can be successful or error
+   */
+  uploadManyImages($event: any, folder: string) {
+    const files = $event.target.files; // Images to be uploaded
+    let response;
+    for (let i = 0; i < files.length; i++) {
+      let imgReference = ref(this.storage, `${folder}/${files[i].name}`);
+      response = uploadBytes(imgReference, files[i])
+      .then(response => { return response })
+      .catch(error => {
+        console.error(error);
+        return error;
+      });
+    }
     return response;
   }
 

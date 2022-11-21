@@ -32,7 +32,7 @@
       </div>
       <div class="variants">
         <label for="variants" class="subtitle">Variants</label>
-        <input id="variants" type="file" class="form-input" alt="Upload image" accept="image/png, image/jpeg, image/jpg, image/svg" multiple="true">
+        <input id="variants" type="file" class="form-input" alt="Upload image" accept="image/png, image/jpeg, image/jpg, image/svg" multiple="true" (change)="selectedManyImages($event)">
       </div>
     </div>
   </form>
