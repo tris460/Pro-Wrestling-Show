@@ -28,8 +28,16 @@
     <p class="required-text" *ngIf="c_pass_req">This field is required</p>
     <p class="required-text" *ngIf="c_pass_match">The password did not match</p>
 
+    <div class="form-check">
+      <input id="privacyPolicy" class="form-check-input" type="checkbox" value="false" [(ngModel)]="privacy_policy_accepted" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="privacyPolicy">
+        I accept the <a routerLink="/privacy-policy" target="_blank">Privacy Policy.</a>
+      </label>
+      <p class="required-text" *ngIf="!privacy_policy_accepted">You must accept the Privacy Policy.</p>
+    </div>
+
     <button type="button" (click)="verifyFields()">Login</button>
-    <p class="required-text required-fields" *ngIf="fieldsVerified">Please, verify the fields</p>
+    <p id="verifyFields" class="required-text required-fields" *ngIf="fieldsVerified">Please, verify the fields</p>
     <div class="old-customer">
       <p>Already have an account? <a routerLink="/login">Login</a></p>
     </div>

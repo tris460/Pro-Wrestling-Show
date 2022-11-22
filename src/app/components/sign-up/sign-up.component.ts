@@ -25,6 +25,7 @@ export class SignUpComponent implements OnInit {
   pass_char: boolean = false;
   c_pass_req: boolean = false;
   c_pass_match: boolean = false;
+  privacy_policy_accepted: boolean = true;
 
   validateEmail = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
   validatePassword = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
@@ -59,7 +60,8 @@ export class SignUpComponent implements OnInit {
       this.c_email_match === true ||
       this.c_pass_match === true ||
       this.pass_char === true ||
-      this.email_verify === true) {
+      this.email_verify === true ||
+      this.privacy_policy_accepted === false) {
         this.fieldsVerified = true;
       } else {
         const newUserCredentials: LoginData = {
