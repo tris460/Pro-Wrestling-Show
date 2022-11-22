@@ -22,8 +22,9 @@ export class LoginService {
     .catch((e) => {
       if(e.code === "auth/email-already-in-use") {
         alert("This email is already registered");
+      } else {
+        console.error(e);
       }
-      console.error(e);
     });
   }
 
@@ -37,6 +38,7 @@ export class LoginService {
    login({ email, password}: LoginData) {
     signInWithEmailAndPassword(this.auth, email, password)
     .then((res) => {
+      localStorage.setItem('idUserLogged', res.user.uid);
       this.router.navigate(['/']);
     })
     .catch((e: any) => {
@@ -57,7 +59,10 @@ export class LoginService {
    */
   signUpWithGoogle() {
     signInWithPopup(this.auth, new GoogleAuthProvider())
-    .then(() => this.router.navigate(['/']))
+    .then((res) => {
+      localStorage.setItem('idUserLogged', res.user.uid);
+      this.router.navigate(['/']);
+    })
     .catch((e: any) => console.error(e.message));
   }
 
