@@ -12,11 +12,20 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
-  correctCredentials: boolean = false;
+  fieldsVerified: boolean = true;
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
+  }
+
+  verifyFields() {
+    if(this.user.email === '' || this.user.password === '') {
+      this.fieldsVerified = false;
+    } else {
+      this.fieldsVerified = true;
+      this.login(this.user);
+    }
   }
 
   /**

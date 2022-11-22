@@ -10,6 +10,9 @@
   --light-blue: #e4f3fc;
   --red: #ff0000;
 }
+#verifyFields {
+  margin-top: 0px;
+}
 .required {
   color: var(--red);
 }

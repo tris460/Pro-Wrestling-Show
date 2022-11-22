@@ -17,9 +17,14 @@ export class LoginService {
     createUserWithEmailAndPassword(this.auth, user.email, user.password)
     .then((res) => {
       localStorage.setItem('idUserLogged', res.user.uid);
+      this.router.navigate(['/user-data']);
     })
-    .catch((e) => console.error(e));
-    this.router.navigate(['/user-data']);
+    .catch((e) => {
+      if(e.code === "auth/email-already-in-use") {
+        alert("This email is already registered");
+      }
+      console.error(e);
+    });
   }
 
   /**
@@ -32,9 +37,17 @@ export class LoginService {
    login({ email, password}: LoginData) {
     signInWithEmailAndPassword(this.auth, email, password)
     .then((res) => {
-    this.router.navigate(['/']);
+      this.router.navigate(['/']);
     })
-    .catch((e: any) => console.error(e.message));
+    .catch((e: any) => {
+      if(e.code === "auth/wrong-password" || e.code === "auth/user-not-found") {
+        alert("Incorrect email or password, please, try again");
+      } else if (e.code === "auth/invalid-email") {
+        alert("The email address is not valid.");
+      } else {
+        alert("Something went wrong, please, try again");
+      }
+    });
   }
 
   /**

@@ -14,7 +14,8 @@
     <div class="forgot">
       <p>Forgot your password?</p>
     </div>
-    <button type="button" (click)="login(user)">Login</button>
+    <button type="button" (click)="verifyFields()">Login</button>
+    <p id="verifyFields" class="required-text required-fields" *ngIf="!fieldsVerified">Please, verify the fields</p>
     <div class="new-customer">
       <p>New customer? <a routerLink="/sign-up">Sign up</a></p>
     </div>
