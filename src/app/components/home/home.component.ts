@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
       this.userService.userLogged = user.filter(u => {
         return u.id_auth == this.userLogged;
       });
+      this.userService.rol = this.userService.userLogged[0].rol;
     });
   }
 

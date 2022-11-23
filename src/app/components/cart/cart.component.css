@@ -35,9 +35,6 @@
   width: 30px;
   filter: invert(1);
 }
-.button-pencil {
-  background-color: var(--blue);
-}
 .button-bin {
   background-color: var(--red);
 }

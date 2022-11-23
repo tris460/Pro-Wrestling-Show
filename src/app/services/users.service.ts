@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore'
-import { doc, getDoc } from 'firebase/firestore';
+import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
@@ -8,7 +7,8 @@ import { User } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UsersService {
-  userLogged: object = {};
+  userLogged: any = {};
+  rol: string = '';
 
   constructor(private firestore: Firestore) { }
 
