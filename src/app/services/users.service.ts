@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore'
+import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore'
+import { doc, getDoc } from 'firebase/firestore';
+import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
+  userLogged: object = {};
 
   constructor(private firestore: Firestore) { }
 
@@ -21,4 +24,12 @@ export class UsersService {
     return addDoc(userReference, newUser);
   }
 
+  /**
+   * This function gets the logged users in the 'user' collection.
+   * @returns an array with the documents in the collection 'user'
+   */
+  getUsers(): Observable<User[]> {
+    const productsReference = collection(this.firestore, 'user');
+    return collectionData(productsReference, { idField: 'id' }) as Observable<User[]>;
+  }
 }

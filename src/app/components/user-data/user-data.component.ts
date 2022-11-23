@@ -31,14 +31,13 @@ export class UserDataComponent implements OnInit {
         this.fieldsVerified = true;
       } else {
         const newUserData: User = {
-          id: localStorage.getItem('idUserLogged') || '',
+          id_auth: localStorage.getItem('idUserLogged') || '',
           name: this.userFields.name,
           last_name: this.userFields.last_name,
           favorites: [],
           products: [],
           rol: 'user'
         };
-        localStorage.removeItem('idUserLogged');
         try {
           await this.usersService.createUser(newUserData);
           this.router.navigate(['/'])

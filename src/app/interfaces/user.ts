@@ -1,5 +1,6 @@
 export interface User {
-  id: string;
+  id?: string;
+  id_auth: string;
   name: string;
   last_name: string;
   favorites: Array<string>;
