@@ -7,8 +7,9 @@ import { User } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UsersService {
-  userLogged: any = {};
+  userLogged: any = localStorage.getItem('idUserLogged');
   rol: string = '';
+  user: any = {};
 
   constructor(private firestore: Firestore) { }
 
@@ -31,5 +32,22 @@ export class UsersService {
   getUsers(): Observable<User[]> {
     const productsReference = collection(this.firestore, 'user');
     return collectionData(productsReference, { idField: 'id' }) as Observable<User[]>;
+  }
+
+  /**
+   * With this function you can get the current user and it will
+   * be stored in the 'user' variable, to be accessed from other functions.
+   */
+  getUserLogged() {
+    let currentUser;
+    this.getUsers().subscribe(user => {
+      currentUser = user.filter(u => {
+        return u.id_auth == this.userLogged;
+      });
+      if(currentUser.length > 0) {
+        this.user = currentUser[0];
+        this.rol = currentUser[0].rol;
+      }
+    });
   }
 }

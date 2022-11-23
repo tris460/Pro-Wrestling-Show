@@ -1,7 +1,7 @@
 <app-menu-general></app-menu-general>
 <!-- User information -->
 <div class="user-information">
-  <p>User name</p>
+  <p>{{user.name}} {{user.last_name}} </p>
   <p>User email</p>
   <button type="button">Change password</button>
 </div>
@@ -14,5 +14,6 @@
 </div>
 <!-- Button -->
 <div class="logout">
-  <button type="button">Logout</button>
+  <button type="button" (click)="logout()" *ngIf="logged">Logout</button>
+  <a routerLink="/login"><button type="button" *ngIf="!logged">Login</button></a>
 </div>

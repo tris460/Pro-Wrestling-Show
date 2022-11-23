@@ -67,9 +67,12 @@ export class LoginService {
   }
 
   /**
-   * This function closes the active session
+   * This function closes the active session, reloads the window
+   * and removes the ID from the local storage.
    */
   logout() {
     signOut(this.auth);
+    location.reload();
+    localStorage.removeItem('idUserLogged');
   }
 }

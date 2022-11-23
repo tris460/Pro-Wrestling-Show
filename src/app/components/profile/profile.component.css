@@ -30,6 +30,14 @@
   width: 90%;
   margin: 5%  5% 10% 5%;
 }
+.logout > a > button {
+  border: none;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 5px;
+  width: 90%;
+  margin: 5%  5% 10% 5%;
+}
 
 @media screen and (min-width: 768px) {
   .user-information {

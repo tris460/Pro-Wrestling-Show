@@ -7,15 +7,17 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./menu-home.component.css']
 })
 export class MenuHomeComponent implements OnInit {
-  rol: string;
+  rol: string = 'user';
   showLogin: boolean = true;
 
   constructor(private userService: UsersService) {
-    this.rol = this.userService.rol;
-    if(this.userService.userLogged) this.showLogin = false;
+    if(this.userService.user) this.showLogin = false;
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.rol = this.userService.rol;
+    }, 1000);
   }
 
 }
