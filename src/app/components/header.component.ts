@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   `,
   styles: [`
     header {
-      background-color: white;
+      background-color: var(--ultra-light-gray);
       padding: 20px;
       text-align: center;
     }

@@ -1,4 +1,14 @@
 /* Estilos globales para la landing page */
+:root {
+  --ultra-light-gray: #fcfbf9;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #0d2f54;
+  --red: #8d0f0e;
+  --bright-red: #8d0f0e;
+  --brown: #8f7755;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +16,12 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Anton", sans-serif;
   background-color: #f5f5f5;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
