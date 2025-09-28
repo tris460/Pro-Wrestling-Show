@@ -1,64 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-:root {
-  --black: #000;
-  --white: #fff;
-  --grey: #9999a0;
-  --light-grey: #c0c0c0;
-  --green: #31936f;
-  --light-green: #7fc899;
-  --blue: #17a2b8;
-  --light-blue: #e4f3fc;
-  --red: #ff0000;
+/* Estilos globales para la landing page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#verifyFields {
-  margin-top: 0px;
-}
-.required {
-  color: var(--red);
-}
-.required-text {
-  color: var(--red);
-  font-size: 14px;
-  margin: 0px;
-}
-.required-fields {
-  text-align: center;
-  margin-top: -20px;
-}
-.title {
-  padding: 5px 10px;
-}
-.title > h1 {
-  font-size: 28px;
-}
-.subtitle {
-  font-size: 25px;
-}
-.form-input {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid var(--light-grey);
-  margin-bottom: 5px;
-  outline: none;
-}
-.form-input:focus {
-  border-bottom: 2px solid var(--green);
-}
-.form {
-  margin: 10px;
-}
-.form-label {
-  font-size: 20px;
-}
-.form-img {
-  width: 100vw;
-}
-.img__image {
-  width: 50%;
-  padding: 20px;
-  max-width: 300px;
-}
-.no-docs {
-  margin: 100px 10px;
-  text-align: center;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
