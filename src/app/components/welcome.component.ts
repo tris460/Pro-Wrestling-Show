@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <section id="welcome">
       <h1>Pro Wrestling Show</h1>
       <p>Welcome to the ultimate wrestling experience</p>
-      <p class="description">Your premier destination for professional wrestling photography, news, and fighter profiles</p>
+      <p class="description">Your premier destination for professional wrestling photography and fighter profiles</p>
       <img src="assets/wrestlers1.png" alt="Wrestlers" class="welcome-image">
     </section>
   `,

@@ -73,6 +73,7 @@ import { Component } from '@angular/core';
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       flex: 1 1 350px;
       max-width: 400px;
+      background: var(--black);
     }
     .fighter-card:hover {
       transform: translateY(-4px);
